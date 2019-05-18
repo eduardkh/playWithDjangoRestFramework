@@ -38,3 +38,8 @@ manage.py startapp languages
 ```
 manage.py createsuperuser
 ```
+## Sync model to the database
+```
+manage.py makemigrations
+manage.py migrate
+```
