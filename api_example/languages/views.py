@@ -9,4 +9,5 @@ from .serializers import LanguageSerializer
 class LanguageView(viewsets.ModelViewSet):
     queryset = Language.objects.all()
     serializer_class = LanguageSerializer
+    # individual per-view permissions
     permission_classes = (permissions.IsAuthenticatedOrReadOnly, )
