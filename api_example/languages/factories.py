@@ -9,11 +9,14 @@ class LanguageFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Language
 
-    name = factory.Faker('name')
+    name = factory.Faker('first_name')
 
 
 
 """
+https://pythonhosted.org/django-anonymizer/djangofaker.html
+
+
 from shell.py
 
 from languages.factories import LanguageFactory
