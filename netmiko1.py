@@ -25,9 +25,10 @@ for HOST in HOSTS:
     print('Accessing', HOST['ip'])
     net_connect = ConnectHandler(**HOST)
 
-    config_commands = ['interface l0',
-                       'ip address 1.1.1.1 255.255.255.0',
-                       'do show ip interface br | i 1.1.1.1']
+    with open('netmiko1.cfg') as f:
+        lines = f.read().splitlines()
+    # print(lines)
+    config_commands = lines
 
-    output = net_connect.send_config_set(config_commands)
+    output = net_connect.send_config_set(config_commands, delay_factor=4)
     print(output)
