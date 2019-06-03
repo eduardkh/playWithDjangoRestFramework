@@ -13,5 +13,9 @@ cisco_881 = {
 
 net_connect = ConnectHandler(**cisco_881)
 
-output = net_connect.send_command('show ip arp')
+config_commands = ['interface l0',
+                   'ip address 1.1.1.1 255.255.255.0',
+                   'do show ip interface br | i 1.1.1.1']
+
+output = net_connect.send_config_set(config_commands)
 print(output)
