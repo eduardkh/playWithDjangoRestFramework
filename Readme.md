@@ -43,3 +43,6 @@ manage.py createsuperuser
 manage.py makemigrations
 manage.py migrate
 ```
+
+
+TEST
